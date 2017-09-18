@@ -1,0 +1,23 @@
+{
+  "name": "KubService",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+	  "install": "node service.js"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+  ],
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "dateformat": "^2.0.0",
+    "node-windows": "^0.1.14",
+    "os": "^0.1.1",
+    "ps-node": "^0.1.6",
+    "ps-tree": "^1.1.0",
+    "request": "^2.81.0"
+  }
+}
