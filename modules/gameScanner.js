@@ -3,7 +3,13 @@
 const psTree = require('ps-tree')
 const psNode = require('ps-node')
 
-const notAGames = ["steamwebhelper.exe", "GameOverlayUI.exe", "steamerrorreporter.exe"];
+const notAGames = [
+	"steamwebhelper.exe",
+	"GameOverlayUI.exe",
+	"steamerrorreporter.exe",
+	"GoogleCrashHandler64.exe",
+	"GoogleCrashHandler.exe"
+];
 
 
 var GameScanner = function() {};
@@ -21,6 +27,8 @@ GameScanner.prototype.scan = function(multiple, callback){
           callback(err, false);
           return;
       }
+  
+		
   
       if (!resultList || resultList.length===0) {
           callback(null, false);
@@ -47,6 +55,8 @@ GameScanner.prototype.scan = function(multiple, callback){
 
 GameScanner.prototype.getChildGame = function(pid, callback){
     psTree(pid, (err, children) => {
+		console.log("children", children);
+		
         if (err) {
             callback(err, false);
             return;
